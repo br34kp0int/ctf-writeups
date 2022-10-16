@@ -1,0 +1,1 @@
+This is my first ctf writeup! As a beginner, I learned a lot in this ctf. Feels like you are actually trying to find and stopping the hackers, since the challenges were related to each other, so there was a progress from beginning until the end. Overall, I really enjoyed it and will participate next year!
