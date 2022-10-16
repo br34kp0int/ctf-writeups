@@ -1,5 +1,6 @@
 ## Pandora's Box (5 pts)
 ![pandoras](https://i.ibb.co/vdry0ZC/pandoras.png)
+
 I wrote a python script that shifts the letter backwards as amount of given numbers.
 
 >flag{dont_let_her_out}
@@ -17,7 +18,7 @@ First thing comes to my mind is base64 encoding, however it is slightly differen
 
 ![Ozymandias](https://i.ibb.co/R2SR9Pg/4.png)
 
-## Two Dead Boys
+## Two Dead Boys (50 pts)
 Question starts with this:
 
 > Good evening, this is a NEWSFLASH from Quick News Network (QNN)... I'm Crime News Reporter Frank Viginere...
