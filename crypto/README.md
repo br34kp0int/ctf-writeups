@@ -18,6 +18,8 @@ First thing comes to my mind is base64 encoding, however it is slightly differen
 
 ![Ozymandias](https://i.ibb.co/R2SR9Pg/4.png)
 
+> flag{Check out my skillz, you Buff Bros, and COME UNGLUED!}
+
 ## Two Dead Boys (50 pts)
 Question starts with this:
 
