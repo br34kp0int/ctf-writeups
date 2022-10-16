@@ -8,6 +8,10 @@ I wrote a python script that shifts the letter backwards as amount of given numb
 ## 'D' is for Dumb Mistakes (15 pts)
 Rsa algorithm question. Prime numbers and exponent were given and flag format was flag{d=VALUE}. Used a script to solve this challenge.
 
+## 'D' is for Decryption (15 pts)
+Using the d value from previous challenge, we can decrypt the ciphertext given to us. Used a script to solve this challenge.
+
+
 >flag{d=1457215}
 
 ## Ozymandias (50 pts)
