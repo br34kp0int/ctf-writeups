@@ -69,6 +69,31 @@ XXE zafiyetini ve php dönüşüm filtrelerini kullanarak dosyanın içeriğini 
 
 	BG-TEK{SUCUK_AĞACI}
 
+### Green Leaf
+
+	[http://ctf.bg-tek.net:8089]
+
+Tekrar bir login sayfasıyla karşılaşıyoruz. Kullanıcı adı ve şifreyi admin olarak girdikten sonra şöyle bir yanıt alıyoruz.
+
+![Login1](https://s2.loli.net/2023/05/03/HVnGMirZsvge7P8.png)
+
+Sayfa kaynak koduna baktığımızda /js dizini altında login.js dosyası olduğunu görüyoruz. Dosyayı inceleyelim.
+
+![login.js](https://s2.loli.net/2023/05/03/r5upXCAKzStV2Oe.png)
+
+İsteğin alert fonksiyonundan sonra gönderildiğini görüyoruz. JSON formatında gönderildiği için NOSQL veritabanı kullanıldığını düşünebiliriz. Bu aşamada NOSQL injection denemesi yapıyoruz. Bu sefer curl kullanacağız.
+
+	curl -X POST -H 'Content-Type: application/json' -d '{"username":{"$ne": "br34kp0int"},"password":{"$ne": "123"}}' http://ctf.bg-tek.net:8089/user/login
+
+![success](https://s2.loli.net/2023/05/03/FQ5uSktKPUlXeN2.png)
+
+Görüldüğü üzere NOSQL injection zafiyeti mevcut ve sanitization kullanılmamış. $ne operatörü kullandığımız için kullanıcı adı ve şifre yerine istediğimiz değeri girebiliriz. Örneğin:
+
+	{"username":{"$ne": null},"password":{"$ne": null}}
+
+İki örnekte de veritabanında bulunan ilk kullanıcı olarak giriş yapabiliyoruz. Burada dikkat edilmesi gereken, şifreyi "yanlış" girmektir. Eğer doğru şifreyi tahmin etseydik veritabanındaki ilk kullanıcıyı atlamış olacaktık. Bu nedenle bir şifre girmektense null değeri bizi daha doğru sonuca götürecektir.
+
+	BG-TEK{N0SQL_1NJ3CT1ON}
 
 
 ## Crypto
@@ -108,5 +133,31 @@ Wayback machine'de kullanıcının twitter adresini sorguladığımızda bir sna
 Böylece flagi bulmuş oluyoruz.
 
 	BG-TEK{W4YB4CK_M4CH1N3}
+
+### Agent47
+
+```
+Bir süredir yakalamaya çalıştığımız ajan sana vermiş olduğumuz 1. fotoğrafı gizli bir chat uygulamasında paylaştı. Aldığımız bilgiye göre buradan sonra bir kiliseye gidecek ve gideceği kilisede sana vermiş olduğumuz 2. fotoğraftaki gibi bir alan bulunuyor. Senden ajanın gideceği kilisenin ismini öğrenmeni istiyoruz.
+
+Flag formatı: BG-TEK{FLAG_FORMATI} boşluklar yerine _ kullan , bütün karakterler büyük harf olmak zorunda ve İ yerine I kullan.
+```
+
+Soruda bize iki farklı fotoğraf verilmiş.
+
+| ![](https://s2.loli.net/2023/05/03/YbBCosTIPrRKMyi.jpg) | ![](https://s2.loli.net/2023/05/03/u81fiJCrMF5qDXK.png) |
+|:-------------------------------------------------------:|:-------------------------------------------------------:|
+|                       1.fotoğraf                        |                       2.fotoğraf                        |
+
+İlk fotoğrafı Google Lens'te aradığımızda görselin Kastellorizo'da çekildiğini buluyoruz.
+
+![Kastellorizo](https://s2.loli.net/2023/05/03/pWoCd6fBLDruiUg.png)
+
+Ardından Kastellorizo'daki kiliseleri Google Maps'te arıyoruz. "kastellorizo church" şeklinde arama yapıp görselleri incelediğimizde 5.kilisenin görseli 2.fotoğrafla eşleşiyor.
+
+![Church](https://s2.loli.net/2023/05/03/O1pyd8lC7ZwicPQ.png)
+
+Flag olarak birkaç hatalı denemenin ardından mapsteki ismin aynısını girdiğimizde doğru cevaba ulaşıyoruz.
+
+	BG-TEK{SAINT_GEORGE_AT_PIGADI_ORTHODOX_CHURCH}
 
 Mini ctf yarışması için ideal bir seviyedeydi diyebiliriz. Web kategorisi telefonla katılan yarışmacılar için biraz zor denilebilir.
