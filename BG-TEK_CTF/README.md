@@ -79,7 +79,43 @@ Tekrar bir login sayfasıyla karşılaşıyoruz. Kullanıcı adı ve şifreyi ad
 
 Sayfa kaynak koduna baktığımızda /js dizini altında login.js dosyası olduğunu görüyoruz. Dosyayı inceleyelim.
 
-![login.js](https://s2.loli.net/2023/05/03/r5upXCAKzStV2Oe.png)
+```javascript
+$(document).ready(function(){
+
+	$("#login_form").submit(function(e){
+        e.preventDefault();
+    });
+
+ 	$("#login_submit").on('click', function(){
+ 		var a = $('#login_form').serializeArray();
+ 		var post_data = {};
+ 		$.each(a, function () {
+ 			if (post_data[this.name]) {
+                if (!post_data[this.name].push) {
+                    post_data[this.name] = [post_data[this.name]];
+                }
+                post_data[this.name].push(this.value || '');
+            } else {
+                post_data[this.name] = this.value || '';
+            }
+        });
+        alert(JSON.stringify(post_data));
+    	$.ajax({
+     		type: "POST",
+ 			url: "/user/login",
+ 			dataType: 'json',
+            contentType: 'application/json',
+ 			data: JSON.stringify(post_data),
+         	success: function(msg){
+            	$('#response').html(msg.msg);
+         	},
+ 			error: function(){
+ 				alert("failure");
+ 			}
+       	});
+ 	});
+});
+```
 
 İsteğin alert fonksiyonundan sonra gönderildiğini görüyoruz. JSON formatında gönderildiği için NOSQL veritabanı kullanıldığını düşünebiliriz. Bu aşamada NOSQL injection denemesi yapıyoruz. Bu sefer curl kullanacağız.
 
