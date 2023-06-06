@@ -25,7 +25,10 @@ Devam edecek
 ## Talha22
 
 Denemelerimizle ilk paragrafın şifrelemesinin Vigenère olduğunu farkettik. Çevirince de özetle talha diye arkadaşı varmış, atları çok seviyormuş ve bir not bırakmış bu nedir diye bize soruyor.
-Atlarla alakalı
+At diyince şifreleme olarak Atbash cipher geldi ve uyguladık.
+'''
+HACKME{4tc0ks3vd1g1mb1rh4yv4nd1r}
+'''
 
 ## G.O.R.A
 
