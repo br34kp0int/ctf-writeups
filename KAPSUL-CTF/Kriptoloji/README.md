@@ -18,17 +18,22 @@ HACKME{K3SF3D1LM3Y1B3K13Y3NC0KH4Z1N3V4R}
 
 ## Bu Ford Ranger da müthiş bir araba ya!
 
-Soru ramimalek.txt dosyasında n oluşuyor ve içerisinde jhukktmnjrqelx yazıyor.
-Devam edecek
+Soru ramimalek.txt dosyasından oluşuyor ve içerisinde jhukktmnjrqelx yazıyor.
+Deneye deneye şifrelemenin Beaufort olduğunu fark ettik.
+İpucu olarak dosya isminden key kısmına eliot denedik flag'a ulaştık.
 
+```
+HACKME{veryeasycrypto}
+```
 
 ## Talha22
 
 Denemelerimizle ilk paragrafın şifrelemesinin Vigenère olduğunu farkettik. Çevirince de özetle talha diye arkadaşı varmış, atları çok seviyormuş ve bir not bırakmış bu nedir diye bize soruyor.
-At diyince şifreleme olarak Atbash cipher geldi ve uyguladık.
-'''
+At diyince şifreleme olarak aklımıza Atbash cipher geldi ve uyguladık.
+
+```
 HACKME{4tc0ks3vd1g1mb1rh4yv4nd1r}
-'''
+```
 
 ## G.O.R.A
 
@@ -43,4 +48,5 @@ Verilen metni buradan decrypt ettiğimizde flagi buluyoruz.
 HACKME{UZAYLILARINYANINDATARTISMAYALIMXD}
 ```
 
-To be continued...
+## Kuzey Unutmaz Leydi Stark
+Bu soruyu bulamadık. Cevabı öğrenince güncellenecek.
