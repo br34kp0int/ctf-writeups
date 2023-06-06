@@ -21,11 +21,23 @@ HACKME{K3SF3D1LM3Y1B3K13Y3NC0KH4Z1N3V4R}
 Soru ramimalek.txt dosyasında n oluşuyor ve içerisinde jhukktmnjrqelx yazıyor.
 Devam edecek
 
-## G.O.R.A
-Soruda garip şekili bir alfabe ile bir şeyler yazılmış. Soru isminden gelen ipucu ile beraber bunun Alien Language olduğunu anlıyoruz.
-Cümleyi Alien Language ⏃⌰⟟⟒⋏ Cipher ile çözdüğümzde flag değerine ulaşırız.
 
 ## Talha22
 
 Denemelerimizle ilk paragrafın şifrelemesinin Vigenère olduğunu farkettik. Çevirince de özetle talha diye arkadaşı varmış, atları çok seviyormuş ve bir not bırakmış bu nedir diye bize soruyor.
-Atlarla alakalı 
+Atlarla alakalı
+
+## G.O.R.A
+
+![Soru](https://s2.loli.net/2023/06/07/E3IpntA9oQ5kF6e.png)
+
+
+Tüm sembol şifrelerine [buradan](https://www.dcode.fr/symbols-ciphers) ulaşılabilir. Sembolleri incelediğimizde verilen görselin [Alien Language](https://www.dcode.fr/alien-language) olduğunu keşfediyoruz.
+
+Verilen metni buradan decrypt ettiğimizde flagi buluyoruz.
+
+```
+HACKME{UZAYLILARINYANINDATARTISMAYALIMXD}
+```
+
+To be continued...
