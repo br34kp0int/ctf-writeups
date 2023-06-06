@@ -1,3 +1,5 @@
+# Kapsul CTF OSINT Çözümleri: 
+
 ## Belediyenin Sana İhtiyacı Var
 
 ![belediye](images/belediye.png)
@@ -87,7 +89,9 @@ Ctfi hazırlayan LastGuard'ın instagram adresindeki fotoğrafta flagi buluyoruz
      https://www.instagram.com/lastguardsec/
      
  ![instagram](images/insta.png)
-
+ 
+ 
+ @ElliotAlderson
 
 
 
